@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-fab top right edge>
+    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list>
+      <button ion-fab (click)="classByAge()" title="Class by age">A</button>
+      <button ion-fab>N</button>
+      <button ion-fab>X</button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <ion-list inset>
+    <ion-item *ngFor="let person of people">
+        <ion-avatar item-start>
+            <img [src]="person.picture.medium" [alt]="person.name.last">
+          </ion-avatar>
+      <!-- <h1> {{ person.name.title }} </h1> -->
+      <h2> {{ person.name.last }} {{ person.name.first }} </h2>
+      <p> {{ person.gender }} </p>
+      <p>Age : {{ getAge( person.dob ) }} </p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
